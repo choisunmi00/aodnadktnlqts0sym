@@ -46,25 +46,7 @@
             </a-marker>
 
             <a-entity camera></a-entity>
-            <a-light type="point" color="#fff" intensity="1000" position="10 0 0"></a-light>
+            <a-light type="point" color="#fff" intensity="1000" position="10 0 -10"></a-light>
         </a-scene>
-        <!-- Display camera position -->
-        <div id="cameraPosition" style="position: fixed; top: 10px; left: 10px; color: white; background: rgba(0, 0, 0, 0.5); padding: 8px;">
-            Camera Position: 
-        </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var sceneEl = document.querySelector('a-scene'); // Get the scene
-                var cameraEl = document.getElementById('camera'); // Get the camera element
-                var positionDisplay = document.getElementById('cameraPosition'); // Get the display element
-
-                sceneEl.addEventListener('renderstart', function () {
-                    setInterval(function () {
-                        var position = cameraEl.getAttribute('position'); // Get current position
-                        positionDisplay.textContent = 'Camera Position: ' + Object.values(position).join(', ');
-                    }, 100); // Update position every 100 ms
-                });
-            });
     </body>
 </html>
